@@ -1,16 +1,30 @@
+import { ApplicationProvider } from '@ui-kitten/components';
+import * as eva from '@eva-design/eva'
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Alert, Button, Modal, StyleSheet, Text, View } from 'react-native';
+import HomeScreen from './pages/HomeScreen';
+
+
+
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ApplicationProvider {...eva} theme={eva.light}>
+      <HomeScreen></HomeScreen>
+      <StatusBar/>
+    </ApplicationProvider>
   );
 }
 
 const styles = StyleSheet.create({
+  modalView: {
+    // margin:60,
+    backgroundColor: "white",
+    alignItems: "center",
+    justifyContent: 'center',
+    borderRadius: 20,
+    // padding: 35,
+  },
   container: {
     flex: 1,
     backgroundColor: '#fff',
